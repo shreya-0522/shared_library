@@ -16,4 +16,9 @@ def checkout( String url ,String branch , Map config = [:] ) {
     git.call(url , branch)
 }
 
+def playrun(String inventoryPath, String testPlaybookPath) { 
+   def play = new org.mygurukulam.ansible.Playbook()
+   play.runAnsiblePlaybook(inventoryPath, testPlaybookPath)
+}
+
 
