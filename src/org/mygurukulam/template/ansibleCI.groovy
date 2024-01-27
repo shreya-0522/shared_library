@@ -11,9 +11,9 @@ def hi = new org.mygurukulam.common.Hello()
 hi.hello(name)
 }
 
-def checkout( String url ,String creds ,String branch , Map config = [:] ) {
+def checkout( String url ,String branch , Map config = [:] ) {
    def git = new org.mygurukulam.common.Checkout()
-    git.call(url, creds, branch)
+    git.call(url , branch)
 }
 
 
