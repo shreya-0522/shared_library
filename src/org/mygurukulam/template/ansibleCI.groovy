@@ -4,10 +4,7 @@ import org.mygurukulam.common.*
 import org.mygurukulam.ansible.*
 
 def call(String name , Map config = [:]) {
-//def play = new org.mygurukulam.ansible.Playbook()
 def hi = new org.mygurukulam.common.Hello()
-
-//play.runAnsiblePlaybook(inventoryPath, testPlaybookPath)
 hi.hello(name)
 }
 
@@ -16,9 +13,9 @@ def checkout( String url ,String branch , Map config = [:] ) {
     git.call(url , branch)
 }
 
-def playrun(String inventoryPath, String testPlaybookPath) { 
+def playrun(String inventoryPath, String testPlaybookPath String ssh_pem) { 
    def play = new org.mygurukulam.ansible.Playbook()
-   play.runAnsiblePlaybook(inventoryPath, testPlaybookPath)
+   play.runAnsiblePlaybook(inventoryPath, testPlaybookPath, ssh_pem)
 }
 
 
