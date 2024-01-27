@@ -18,7 +18,7 @@ pipeline {
                     def url = params.GIT_URL
                     def branch = params.GIT_BRANCH
                     def tf = new ansibleCI()
-                    tf.checkout(url, branch , creds)
+                    tf.checkout(url, branch )
                 }
             }
         }
