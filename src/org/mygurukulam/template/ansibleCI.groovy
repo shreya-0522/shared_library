@@ -13,7 +13,7 @@ def checkout( String url ,String branch , Map config = [:] ) {
     git.call(url , branch)
 }
 
-def playrun(String inventoryPath, String testPlaybookPath String ssh_pem) { 
+def playrun(String inventoryPath, String testPlaybookPath, String ssh_pem) { 
    def play = new org.mygurukulam.ansible.Playbook()
    play.runAnsiblePlaybook(inventoryPath, testPlaybookPath, ssh_pem)
 }
