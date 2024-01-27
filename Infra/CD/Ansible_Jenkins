@@ -22,10 +22,10 @@ pipeline {
                     echo "Performing actions in the new stage..."
                     def inventoryPath = "aws_ec2.yml"
                     def testPlaybookPath = "test.yml"
-                    def ans = new ansibleCI()
+                    def ansibleCommand = new ansibleCI()
                     
                     withCredentials([sshUserPrivateKey(credentialsId: 'SSH-key-jenkins', keyFileVariable: 'ssh_pem')]) {
-                        ans.playrun(inventoryPath, testPlaybookPath, ssh_pem)
+                        ansibleCommand.playrun(inventoryPath, testPlaybookPath, ssh_pem)
                     }
                 }
             }
