@@ -7,7 +7,7 @@ pipeline {
     parameters {
         string(name: 'GIT_URL', defaultValue: 'https://github.com/shreya-0522/shared_library.git', description: 'Git repository URL')
         string(name: 'GIT_BRANCH', defaultValue: 'main', description: 'Git branch')
-        string(name: 'CREDENTIALS', description: 'Credentials for Git checkout')
+       // string(name: 'CREDENTIALS', description: 'Credentials for Git checkout')
         string(name: 'INVENTORY_PATH', defaultValue: 'aws_ec2.yml', description: 'Path to Ansible inventory file')
         string(name: 'PLAYBOOK_PATH', defaultValue: 'test.yml', description: 'Path to Ansible test playbook file')
     }
@@ -18,7 +18,7 @@ pipeline {
                 script {
                     def url = params.GIT_URL
                     def branch = params.GIT_BRANCH
-                    def creds = params.CREDENTIALS
+                  //  def creds = params.CREDENTIALS
                     def tf = new ansibleCI()
                     tf.checkout(url, branch , creds)
                 }
