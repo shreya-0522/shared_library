@@ -19,7 +19,7 @@ pipeline {
         stage('ansible') {
             steps {
                 script {
-                    echo "Performing actions in the new stage..."
+                    echo "Executing Ansible Command..."
                     def inventoryPath = "aws_ec2.yml"
                     def testPlaybookPath = "test.yml"
                     def ansibleCommand = new ansibleCI()
